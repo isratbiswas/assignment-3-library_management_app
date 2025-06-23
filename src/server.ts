@@ -1,17 +1,21 @@
 import {Server} from "http";
 import app from "./app";
+import dotenv from 'dotenv';
 import mongoose from "mongoose";
 
+dotenv.config();
 let server : Server;
-const PORT = 5000;
+
+const port = process.env.PORT;
 
 async function libraryManagment(){
-    await mongoose.connect(  "mongodb+srv://israt:58.%40P%40wnP9uchc-@cluster0.i6b4s.mongodb.net/library_App");
+    await mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.i6b4s.mongodb.net/library_App`);
     console.log('connect to mongodb')
     try{
-      server = app.listen(PORT, ()=>{
-       console.log(`App listening on ${PORT}`)
+      server = app.listen(port, ()=>{
+       console.log(`App listening on ${port}`)
       })  
+     
     }
     catch(error){
         console.error(error)

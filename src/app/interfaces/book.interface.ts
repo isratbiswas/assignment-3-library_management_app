@@ -1,10 +1,10 @@
 export interface IBook{
     title: string,
     author: string,
-    genre: 'FICTION' | "NON_FICTION" | "SCIENCE" | "HISTORY" | "BIOGRAPHY" | " FANTASY",
+    genre: " FANTASY" |'FICTION' | "NON_FICTION" | "SCIENCE" | "HISTORY" | "BIOGRAPHY"  ,
     isbn: string,
     description: string,
-    copies: number,
+    copies: number
     available: boolean,
     versionKey: boolean,
     timestamps: boolean
