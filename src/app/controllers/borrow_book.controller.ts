@@ -46,7 +46,7 @@ res.status(200).json({
 
 })
 
-borrowBookRoutes.post('/create-borrow', async(req: Request, res:Response)=>{
+borrowBookRoutes.post('/', async(req: Request, res:Response)=>{
 try{
       const borrowBook=req.body;
     //static method
@@ -58,7 +58,7 @@ try{
       })
 }
 catch(error){
-  res.status(500).json({
+  res.status(400).json({
       status:false,
       message: "This book is not available for this time.Please come two weeks leter..",
       error: error

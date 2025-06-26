@@ -1,4 +1,4 @@
-import { Date, ObjectId, Types } from "mongoose"
+import { Date,  Types } from "mongoose"
 
 export interface IBorrowBook{
     book: Types.ObjectId,
@@ -7,4 +7,3 @@ export interface IBorrowBook{
     versionKey: boolean,
     timestamps: boolean
 }
- console.log(Types.ObjectId)

@@ -21,7 +21,7 @@ bookRoutes.get('/', async (req: Request, res: Response) => {
       data: books
     });
   } catch (error) {
-    res.status(500).json({
+    res.status(400).json({
       success: false,
       message: "Server Error",
       error
@@ -31,7 +31,7 @@ bookRoutes.get('/', async (req: Request, res: Response) => {
 });
 
 //Create a book 
-bookRoutes.post('/create-book', async(req:Request, res: Response)=>{
+bookRoutes.post('/', async(req:Request, res: Response)=>{
     try{
    const book= req.body;
     //instance method
@@ -43,7 +43,7 @@ bookRoutes.post('/create-book', async(req:Request, res: Response)=>{
         data
     })
     }catch(error){
-      res.status(500).json({
+      res.status(400).json({
           success:false,
           message:"Validation failed",
          error: error
@@ -62,7 +62,7 @@ bookRoutes.get('/:bookId', async(req:Request, res: Response)=>{
         data
     })
   } catch(error){
-       res.status(500).json({
+       res.status(400).json({
           success:false,
         message:"Validation failed",
        error: error
@@ -84,7 +84,7 @@ bookRoutes.put('/:bookId', async(req:Request, res: Response)=>{
     })
     }
     catch(error){
-       res.status(500).json({
+       res.status(400).json({
           success:false,
           message:"Validation failed",
          error: error
@@ -112,7 +112,7 @@ bookRoutes.delete('/:bookId', async(req:Request, res: Response)=>{
     })
      
    } catch(error){
-           res.status(500).json({
+           res.status(400).json({
            success:false,
            message:"Validation failed",
            error: error
