@@ -52,7 +52,7 @@ exports.borrowBookRoutes.get('/', (req, res) => __awaiter(void 0, void 0, void 0
         data
     });
 }));
-exports.borrowBookRoutes.post('/create-borrow', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.borrowBookRoutes.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const borrowBook = req.body;
         //static method
@@ -64,7 +64,7 @@ exports.borrowBookRoutes.post('/create-borrow', (req, res) => __awaiter(void 0, 
         });
     }
     catch (error) {
-        res.status(500).json({
+        res.status(400).json({
             status: false,
             message: "This book is not available for this time.Please come two weeks leter..",
             error: error

@@ -33,7 +33,7 @@ exports.bookRoutes.get('/', (req, res) => __awaiter(void 0, void 0, void 0, func
         });
     }
     catch (error) {
-        res.status(500).json({
+        res.status(400).json({
             success: false,
             message: "Server Error",
             error
@@ -41,7 +41,7 @@ exports.bookRoutes.get('/', (req, res) => __awaiter(void 0, void 0, void 0, func
     }
 }));
 //Create a book 
-exports.bookRoutes.post('/create-book', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.bookRoutes.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const book = req.body;
         //instance method
@@ -54,7 +54,7 @@ exports.bookRoutes.post('/create-book', (req, res) => __awaiter(void 0, void 0, 
         });
     }
     catch (error) {
-        res.status(500).json({
+        res.status(400).json({
             success: false,
             message: "Validation failed",
             error: error
@@ -73,7 +73,7 @@ exports.bookRoutes.get('/:bookId', (req, res) => __awaiter(void 0, void 0, void 
         });
     }
     catch (error) {
-        res.status(500).json({
+        res.status(400).json({
             success: false,
             message: "Validation failed",
             error: error
@@ -93,7 +93,7 @@ exports.bookRoutes.put('/:bookId', (req, res) => __awaiter(void 0, void 0, void 
         });
     }
     catch (error) {
-        res.status(500).json({
+        res.status(400).json({
             success: false,
             message: "Validation failed",
             error: error
@@ -118,7 +118,7 @@ exports.bookRoutes.delete('/:bookId', (req, res) => __awaiter(void 0, void 0, vo
         });
     }
     catch (error) {
-        res.status(500).json({
+        res.status(400).json({
             success: false,
             message: "Validation failed",
             error: error
